@@ -10,7 +10,7 @@ func serve(w http.ResponseWriter, r *http.Request) {
   env := map[string]string{}
   for _, keyval := range os.Environ() {
     keyval := strings.SplitN(keyval, "=", 2)
-    env[keyval[0]] = "KEMPAKONGS_" + keyval[1]
+    env[keyval[0]] = "KEMPAKONG_" + keyval[1]
   }
   bytes, err := json.Marshal(env)
   if err != nil {
